@@ -114,7 +114,7 @@ namespace LibrarySystem.Models.Tests.AuthorTests
         public void LastNameProperty_ShouldHaveRequiredAttribute()
         {
             // Arrange
-            var lastNameProp = typeof(Author).GetProperty("FirstName");
+            var lastNameProp = typeof(Author).GetProperty("LastName");
 
             // Act
             var requiredAttribute = lastNameProp.GetCustomAttributes(typeof(RequiredAttribute), true)
@@ -129,7 +129,7 @@ namespace LibrarySystem.Models.Tests.AuthorTests
         public void LastName_ShouldHaveCorrectMinLength()
         {
             // Arrange
-            var lastNameProp = typeof(Author).GetProperty("FirstName");
+            var lastNameProp = typeof(Author).GetProperty("LastName");
 
             // Act
             var minLengthAttribute = lastNameProp.GetCustomAttributes(typeof(MinLengthAttribute), true)
@@ -144,7 +144,7 @@ namespace LibrarySystem.Models.Tests.AuthorTests
         public void LastName_ShouldHaveCorrectMaxLength()
         {
             // Arrange
-            var lastNameProp = typeof(Author).GetProperty("FirstName");
+            var lastNameProp = typeof(Author).GetProperty("LastName");
 
             // Act
             var minLengthAttribute = lastNameProp.GetCustomAttributes(typeof(MaxLengthAttribute), true)
@@ -153,6 +153,17 @@ namespace LibrarySystem.Models.Tests.AuthorTests
 
             // Assert
             Assert.That(minLengthAttribute, Is.Not.Null);
+        }
+
+        [TestCase("Daniel")]
+        [TestCase("Michael")]
+        public void LastName_ShouldSetDataCorrectly(string testLastName)
+        {
+            // Arrange & Act
+            Author author = new Author() { LastName = testLastName };
+
+            // Assert
+            Assert.AreEqual(author.LastName, testLastName);
         }
     }
 }
