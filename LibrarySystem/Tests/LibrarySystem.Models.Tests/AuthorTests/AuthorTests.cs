@@ -11,6 +11,18 @@ namespace LibrarySystem.Models.Tests.AuthorTests
     public class AuthorTests
     {
         [Test]
+        public void BooksCollection_Should_GetAndSetDataCorrectly()
+        {
+            // Arrange & Act
+            var book = new Book() { Id = Guid.NewGuid() };
+            var set = new HashSet<Book> { book };
+            var author = new Author() { Books = set };
+
+            // Assert
+            Assert.AreEqual(author.Books.First().Id, book.Id);
+        }
+
+        [Test]
         public void Constructor_ShouldSetIdCorrectly()
         {
             // Arrange & Act
