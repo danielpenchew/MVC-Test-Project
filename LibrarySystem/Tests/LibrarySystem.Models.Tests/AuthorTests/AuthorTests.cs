@@ -1,5 +1,6 @@
 ﻿using LibrarySytem.Data.Models.Models;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,17 @@ namespace LibrarySystem.Models.Tests.AuthorTests
     [TestFixture]
     public class AuthorTests
     {
+        [Test]
+        public void Constructor_ShouldSetIdCorrectly()
+        {
+            // Arrange & Act
+            var id = Guid.NewGuid();
+            Author author = new Author() { Id = id };
+
+            // Assert
+            Assert.AreEqual(author.Id, id);
+        }
+
         [Test]
         public void Constructor_ShouldHaveParameterlessConstructor()
         {
