@@ -9,23 +9,23 @@ namespace LibrarySystem.Data.Services
 {
     public class AuthorServices : IAuthorServices
     {
-        private readonly ILibrarySystemEfDataProvider<Author> authorDataProvider;
+        private readonly ILibrarySystemEfWrapper<Author> authorWrapper;
 
-        public AuthorServices(ILibrarySystemEfDataProvider<Author> authorDataProvider)
+        public AuthorServices(ILibrarySystemEfWrapper<Author> authorWrapper)
         {
-            Guard.WhenArgument(authorDataProvider, "authorDataProvider").IsNull().Throw();
+            Guard.WhenArgument(authorWrapper, "authorWrapper").IsNull().Throw();
 
-            this.authorDataProvider = authorDataProvider;
+            this.authorWrapper = authorWrapper;
         }
 
         public IQueryable<Author> GetAllAuthors()
         {
-            return this.authorDataProvider.All();
+            return this.authorWrapper.All();
         }
 
         public Author GetById(Guid id)
         {
-            return this.authorDataProvider.GetById(id);
+            return this.authorWrapper.GetById(id);
         }
     }
 }

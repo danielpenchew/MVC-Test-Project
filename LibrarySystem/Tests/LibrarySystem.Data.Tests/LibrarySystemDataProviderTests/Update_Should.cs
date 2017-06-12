@@ -6,7 +6,7 @@ using NUnit.Framework;
 using System;
 using System.Data.Entity;
 
-namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
+namespace LibrarySystem.Data.Tests.LibrarySystemWrapperTests
 {
     [TestFixture]
     public class Update_Should
@@ -20,7 +20,7 @@ namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
 
             // Act
             dbContextMock.Setup(x => x.Set<IBook>()).Returns(setMock.Object);
-            var dbSetMock = new LibrarySystemEfDataProvider<IBook>(dbContextMock.Object);
+            var dbSetMock = new LibrarySystemEfWrapper<IBook>(dbContextMock.Object);
             IBook entity = null;
 
             // Assert

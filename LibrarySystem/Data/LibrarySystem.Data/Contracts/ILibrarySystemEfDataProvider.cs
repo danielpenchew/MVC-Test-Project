@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace LibrarySystem.Data.Contracts
 {
-    public interface ILibrarySystemEfDataProvider<T> : IDisposable where T : class
+    public interface ILibrarySystemEfWrapper<T> : IDisposable where T : class
     {
         IQueryable<T> All();
 

@@ -18,7 +18,7 @@ namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
             ILibrarySystemEfDbContext context = null;
 
             // Act & Assert
-            Assert.That(() => new LibrarySystemEfDataProvider<IBook>(context),
+            Assert.That(() => new LibrarySystemEfWrapper<IBook>(context),
                 Throws.InstanceOf<ArgumentNullException>().With.Message.Contains("context"));
         }
 
@@ -31,7 +31,7 @@ namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
 
             // Act
             mockedDbContext.Setup(x => x.Set<IBook>()).Returns(mockedModel.Object);
-            var mockedDbSet = new LibrarySystemEfDataProvider<IBook>(mockedDbContext.Object);
+            var mockedDbSet = new LibrarySystemEfWrapper<IBook>(mockedDbContext.Object);
 
             // Assert
             Assert.That(mockedDbSet, Is.Not.Null);

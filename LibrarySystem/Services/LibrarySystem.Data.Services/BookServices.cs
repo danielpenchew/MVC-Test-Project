@@ -8,15 +8,15 @@ namespace LibrarySystem.Data.Services
 {
     public class BookServices : IBookServices
     {
-        private readonly ILibrarySystemEfDataProvider<Book> bookDataProvider;
+        private readonly ILibrarySystemEfWrapper<Book> bookWrapper;
         private readonly ILibrarySystemEfDbContextSaveChanges librarySystemEfDbContextSaveChanges;
 
-        public BookServices(ILibrarySystemEfDataProvider<Book> bookDataProvider, ILibrarySystemEfDbContextSaveChanges librarySystemEfDbContextSaveChanges)
+        public BookServices(ILibrarySystemEfWrapper<Book> bookWrapper, ILibrarySystemEfDbContextSaveChanges librarySystemEfDbContextSaveChanges)
         {
-            Guard.WhenArgument(bookDataProvider, "bookDataProvider").IsNull().Throw();
+            Guard.WhenArgument(bookWrapper, "bookWrapper").IsNull().Throw();
             Guard.WhenArgument(librarySystemEfDbContextSaveChanges, "librarySystemEfDbContextSaveChanges").IsNull().Throw();
 
-            this.bookDataProvider = bookDataProvider;
+            this.bookWrapper = bookWrapper;
             this.librarySystemEfDbContextSaveChanges = librarySystemEfDbContextSaveChanges;
         }
 
@@ -24,7 +24,7 @@ namespace LibrarySystem.Data.Services
         {
             Guard.WhenArgument(book, "book").IsNull().Throw();
 
-            this.bookDataProvider.Add(book);
+            this.bookWrapper.Add(book);
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
 
@@ -32,7 +32,7 @@ namespace LibrarySystem.Data.Services
         {
             Guard.WhenArgument(book, "book").IsNull().Throw();
 
-            this.bookDataProvider.Delete(book);
+            this.bookWrapper.Delete(book);
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
 
@@ -40,18 +40,18 @@ namespace LibrarySystem.Data.Services
         {
             Guard.WhenArgument(id, nameof(id)).IsNull().Throw();
 
-            this.bookDataProvider.Delete((Guid)id);
+            this.bookWrapper.Delete((Guid)id);
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
 
         public Book GetById(Guid id)
         {
-            return this.bookDataProvider.GetById(id);
+            return this.bookWrapper.GetById(id);
         }
 
         public void UpdateBook(Book book)
         {
-            this.bookDataProvider.Update(book);
+            this.bookWrapper.Update(book);
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
     }

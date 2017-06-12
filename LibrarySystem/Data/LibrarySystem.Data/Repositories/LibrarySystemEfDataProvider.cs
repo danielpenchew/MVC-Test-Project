@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace LibrarySystem.Data.Repositories
 {
-    public class LibrarySystemEfDataProvider<T> : ILibrarySystemEfDataProvider<T> where T : class
+    public class LibrarySystemEfWrapper<T> : ILibrarySystemEfWrapper<T> where T : class
     {
-        public LibrarySystemEfDataProvider(ILibrarySystemEfDbContext context)
+        public LibrarySystemEfWrapper(ILibrarySystemEfDbContext context)
         {
             Guard.WhenArgument(context, "context").IsNull().Throw();
 

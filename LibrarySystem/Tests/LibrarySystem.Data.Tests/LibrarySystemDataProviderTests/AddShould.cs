@@ -20,7 +20,7 @@ namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
 
             // Act
             contextMock.Setup(set => set.Set<IBook>()).Returns(setMock.Object);
-            var dbSetMock = new LibrarySystemEfDataProvider<IBook>(contextMock.Object);
+            var dbSetMock = new LibrarySystemEfWrapper<IBook>(contextMock.Object);
             IBook entity = null;
 
             // Assert
