@@ -1,15 +1,10 @@
 ﻿using LibrarySystem.Data.Contracts;
 using LibrarySystem.Data.Repositories;
 using LibrarySytem.Data.Models.Contracts;
-using LibrarySytem.Data.Models.Models;
 using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
 {

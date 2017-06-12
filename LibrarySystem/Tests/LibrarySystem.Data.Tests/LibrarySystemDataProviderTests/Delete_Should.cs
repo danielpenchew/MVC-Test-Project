@@ -9,22 +9,22 @@ using System.Data.Entity;
 namespace LibrarySystem.Data.Tests.LibrarySystemDataProviderTests
 {
     [TestFixture]
-    public class AddShould
+    public class Delete_Should
     {
         [Test]
-        public void Throw_NullReferenceException_WhenPassedArgumentIsNull()
+        public void ThrowNullNullReferenceException_WhenNullParameterIsPassed()
         {
             // Arrange
-            var contextMock = new Mock<ILibrarySystemEfDbContext>();
+            var dbContextMock = new Mock<ILibrarySystemEfDbContext>();
             var setMock = new Mock<DbSet<IBook>>();
 
             // Act
-            contextMock.Setup(set => set.Set<IBook>()).Returns(setMock.Object);
-            var dbSetMock = new LibrarySystemEfDataProvider<IBook>(contextMock.Object);
+            dbContextMock.Setup(x => x.Set<IBook>()).Returns(setMock.Object);
+            var dbSetMock = new LibrarySystemEfDataProvider<IBook>(dbContextMock.Object);
             IBook entity = null;
 
             // Assert
-            Assert.That(() => dbSetMock.Add(entity),
+            Assert.That(() => dbSetMock.Delete(entity),
                 Throws.InstanceOf<NullReferenceException>());
         }
     }
