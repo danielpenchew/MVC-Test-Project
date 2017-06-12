@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="LibrarySystemDataProviderTests\AddShould.cs" />
     <Compile Include="LibrarySystemDataProviderTests\AllShould.cs" />
+    <Compile Include="LibrarySystemDataProviderTests\Constructor_Should.cs" />
     <Compile Include="LibrarySystemDbContextTests\LibrarySystemEfDbContextTests.cs" />
     <Compile Include="LibrarySystemEfDbContextSaveChangesTests\LibrarySystemEfDbContextSaveChangesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
