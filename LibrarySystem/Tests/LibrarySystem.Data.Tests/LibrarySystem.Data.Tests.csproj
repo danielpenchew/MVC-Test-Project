@@ -74,6 +74,7 @@
     <Compile Include="LibrarySystemDataProviderTests\Constructor_Should.cs" />
     <Compile Include="LibrarySystemDataProviderTests\Delete_Should.cs" />
     <Compile Include="LibrarySystemDataProviderTests\GetById_Should.cs" />
+    <Compile Include="LibrarySystemDataProviderTests\Update_Should.cs" />
     <Compile Include="LibrarySystemDbContextTests\LibrarySystemEfDbContextTests.cs" />
     <Compile Include="LibrarySystemEfDbContextSaveChangesTests\LibrarySystemEfDbContextSaveChangesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
