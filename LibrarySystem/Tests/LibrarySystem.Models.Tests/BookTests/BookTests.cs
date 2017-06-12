@@ -67,5 +67,16 @@ namespace LibrarySystem.Models.Tests.BookTests
             // Assert
             Assert.IsInstanceOf<User>(book.User);
         }
+
+        [TestCase("498257943")]
+        [TestCase("-3123")]
+        public void UserId_ShouldSetCorrectValue(string testUserId)
+        {
+            // Arrange & Act
+            var book = new Book() { UserId = testUserId };
+
+            // Assert
+            Assert.AreEqual(book.UserId, testUserId);
+        }
     }
 }
