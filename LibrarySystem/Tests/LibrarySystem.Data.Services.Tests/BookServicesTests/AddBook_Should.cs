@@ -23,5 +23,21 @@ namespace LibrarySystem.Data.Services.Tests.BookServicesTests
             // Assert
             dbSetMock.Verify(s => s.Add(bookMock.Object), Times.Once);
         }
+
+        [Test]
+        public void CallSaveChangesOnce_IfBookIsValid()
+        {
+            // Arrange
+            var dbSetMock = new Mock<ILibrarySystemEfWrapper<Book>>();
+            var saveChangesMock = new Mock<ILibrarySystemEfDbContextSaveChanges>();
+            var bookMock = new Mock<Book>();
+
+            // Act
+            var bookService = new BookServices(dbSetMock.Object, saveChangesMock.Object);
+            bookService.AddBook(bookMock.Object);
+
+            // Assert
+            saveChangesMock.Verify(s => s.SaveChanges(), Times.Once);
+        }
     }
 }
