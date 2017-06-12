@@ -9,11 +9,9 @@ namespace LibrarySystem.Data.Services.Contracts
 
         void DeleteBook(Book book);
 
-        void DeleteBookById(Guid id);
+        void DeleteBookById(object id);
 
         Book GetById(Guid id);
-
-        void CreateBook(Book book);
 
         void UpdateBook(Book book);
     }

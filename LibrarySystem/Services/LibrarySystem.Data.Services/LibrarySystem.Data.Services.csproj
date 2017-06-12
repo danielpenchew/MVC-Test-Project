@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorServices.cs" />
+    <Compile Include="BookServices.cs" />
     <Compile Include="Contracts\IAuthorServices.cs" />
     <Compile Include="Contracts\IBookServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

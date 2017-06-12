@@ -1,11 +1,9 @@
-﻿using LibrarySystem.Data.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibrarySytem.Data.Models.Models;
+﻿using Bytes2you.Validation;
 using LibrarySystem.Data.Contracts;
+using LibrarySystem.Data.Services.Contracts;
+using LibrarySytem.Data.Models.Models;
+using System;
+using System.Linq;
 
 namespace LibrarySystem.Data.Services
 {
@@ -15,17 +13,19 @@ namespace LibrarySystem.Data.Services
 
         public AuthorServices(ILibrarySystemEfDataProvider<Author> authorDataProvider)
         {
-            Guard
+            Guard.WhenArgument(authorDataProvider, "authorDataProvider").IsNull().Throw();
+
+            this.authorDataProvider = authorDataProvider;
         }
 
         public IQueryable<Author> GetAllAuthors()
         {
-            throw new NotImplementedException();
+            return this.authorDataProvider.All();
         }
 
         public Author GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return this.authorDataProvider.GetById(id);
         }
     }
 }
