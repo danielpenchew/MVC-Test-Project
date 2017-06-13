@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorServicesTests\Constructor_Should.cs" />
+    <Compile Include="AuthorServicesTests\GetAllAuthors_Should.cs" />
     <Compile Include="BookServicesTests\AddBook_Should.cs" />
     <Compile Include="BookServicesTests\Constructor_Should.cs" />
     <Compile Include="BookServicesTests\DeleteBookById_Should.cs" />
