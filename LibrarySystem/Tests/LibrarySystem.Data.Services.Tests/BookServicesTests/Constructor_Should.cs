@@ -3,10 +3,6 @@ using LibrarySytem.Data.Models.Models;
 using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibrarySystem.Data.Services.Tests.BookServicesTests
 {
@@ -19,10 +15,10 @@ namespace LibrarySystem.Data.Services.Tests.BookServicesTests
             // Arrange & Act
             var dbSetMock = new Mock<ILibrarySystemEfWrapper<Book>>();
             var saveChangesMock = new Mock<ILibrarySystemEfDbContextSaveChanges>();
-            var bookService = new BookServices(dbSetMock.Object, saveChangesMock.Object);
+            var bookServices = new BookServices(dbSetMock.Object, saveChangesMock.Object);
 
             // Assert
-            Assert.That(bookService, Is.Not.Null.And.InstanceOf<BookServices>());
+            Assert.That(bookServices, Is.Not.Null.And.InstanceOf<BookServices>());
         }
 
         [Test]

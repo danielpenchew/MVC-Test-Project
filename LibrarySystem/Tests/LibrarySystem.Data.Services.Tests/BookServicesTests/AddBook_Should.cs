@@ -17,8 +17,8 @@ namespace LibrarySystem.Data.Services.Tests.BookServicesTests
             var bookMock = new Mock<Book>();
 
             // Act
-            var bookService = new BookServices(dbSetMock.Object, saveChangesMock.Object);
-            bookService.AddBook(bookMock.Object);
+            var bookServices = new BookServices(dbSetMock.Object, saveChangesMock.Object);
+            bookServices.AddBook(bookMock.Object);
 
             // Assert
             dbSetMock.Verify(s => s.Add(bookMock.Object), Times.Once);
@@ -33,8 +33,8 @@ namespace LibrarySystem.Data.Services.Tests.BookServicesTests
             var bookMock = new Mock<Book>();
 
             // Act
-            var bookService = new BookServices(dbSetMock.Object, saveChangesMock.Object);
-            bookService.AddBook(bookMock.Object);
+            var bookServices = new BookServices(dbSetMock.Object, saveChangesMock.Object);
+            bookServices.AddBook(bookMock.Object);
 
             // Assert
             saveChangesMock.Verify(s => s.SaveChanges(), Times.Once);
