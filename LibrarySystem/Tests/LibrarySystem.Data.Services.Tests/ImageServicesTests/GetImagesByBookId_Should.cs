@@ -18,10 +18,11 @@ namespace LibrarySystem.Data.Services.Tests.ImageServicesTests
             var dbSetMock = new Mock<ILibrarySystemEfWrapper<Image>>();
             var imageServices = new ImageServices(dbSetMock.Object);
             Guid id = Guid.NewGuid();
-            var expectedResult = 2;
+            var expectedResult = 3;
 
             dbSetMock.Setup(r => r.All()).Returns(() => new List<Image>()
             {
+                new Image() { Id = Guid.NewGuid(), BookId = id},
                 new Image() { Id = Guid.NewGuid(), BookId = id},
                 new Image() { Id = Guid.NewGuid(), BookId = id},
                 new Image() { Id = Guid.NewGuid(), BookId = Guid.NewGuid() }
