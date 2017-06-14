@@ -28,7 +28,7 @@ namespace LibrarySystem.Data.Services
         public IQueryable<Image> GetImagesByBookId(Guid bookId)
         {
             var images = this.imageWrapper.All()
-                                          .Where(i => i.Id == bookId);
+                                          .Where(i => i.BookId == bookId);
 
             return images;
         }

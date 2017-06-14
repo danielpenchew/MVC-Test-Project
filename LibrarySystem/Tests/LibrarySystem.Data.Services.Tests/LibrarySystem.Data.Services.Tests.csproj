@@ -61,6 +61,9 @@
     <Compile Include="BookServicesTests\DeleteBook_Should.cs" />
     <Compile Include="BookServicesTests\GetById_Should.cs" />
     <Compile Include="BookServicesTests\UpdateBook_Should.cs" />
+    <Compile Include="ImageServicesTests\Constructor_Should.cs" />
+    <Compile Include="ImageServicesTests\GetById_Should.cs" />
+    <Compile Include="ImageServicesTests\GetImagesByBookId_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
