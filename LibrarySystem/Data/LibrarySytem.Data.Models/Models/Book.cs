@@ -1,5 +1,6 @@
 ﻿using LibrarySytem.Data.Models.Contracts;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,6 +8,13 @@ namespace LibrarySytem.Data.Models.Models
 {
     public class Book : IBook
     {
+        private ICollection<Image> images;
+
+        public Book()
+        {
+            this.images = new HashSet<Image>();
+        }
+
         public Guid Id { get; set; }
 
         [Required]
@@ -27,5 +35,16 @@ namespace LibrarySytem.Data.Models.Models
 
         public virtual User User { get; set; }
 
+        public virtual ICollection<Image> Images
+        {
+            get
+            {
+                return this.images;
+            }
+            set
+            {
+                this.images = value;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LibrarySytem.Data.Models.Models;
 using System;
+using System.Collections.Generic;
 
 namespace LibrarySytem.Data.Models.Contracts
 {
@@ -18,5 +19,7 @@ namespace LibrarySytem.Data.Models.Contracts
         string UserId { get; set; }
 
         User User { get; set; }
+
+        ICollection<Image> Images { get; set; }
     }
 }
