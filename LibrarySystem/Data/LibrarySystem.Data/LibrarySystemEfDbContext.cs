@@ -17,6 +17,8 @@ namespace LibrarySystem.Data
 
         public IDbSet<Book> Books { get; set; }
 
+        public IDbSet<Image> Images { get; set; }
+
         public static LibrarySystemEfDbContext Create()
         {
             return new LibrarySystemEfDbContext();

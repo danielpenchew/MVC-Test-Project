@@ -13,6 +13,8 @@ namespace LibrarySystem.Data.Contracts
 
         IDbSet<Book> Books { get; set; }
 
+        IDbSet<Image> Images { get; set; }
+
         int SaveChanges();
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;

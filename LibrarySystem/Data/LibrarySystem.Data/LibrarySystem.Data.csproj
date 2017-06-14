@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\ILibrarySystemEfDataProvider.cs" />
+    <Compile Include="Contracts\ILibrarySystemEfWrapper.cs" />
     <Compile Include="Contracts\ILibrarySystemEfDbContext.cs" />
     <Compile Include="Contracts\ILibrarySystemEfDbContextSaveChanges.cs" />
     <Compile Include="LibrarySystemEfDbContext.cs" />
