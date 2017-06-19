@@ -79,6 +79,17 @@ namespace LibrarySystem.Data.Models.Tests.BookTests
         }
 
         [Test]
+        public void User_ShouldReturnCorrectData()
+        {
+            // Arrange & Act
+            User user = new User();
+            Book book = new Book() { User = user };
+
+            // Assert
+            Assert.AreSame(user, book.User);
+        }
+
+        [Test]
         public void Images_ShouldGetAndSetDataCorrectly()
         {
             // Arrange & Act

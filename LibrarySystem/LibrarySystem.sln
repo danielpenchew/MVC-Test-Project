@@ -27,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutomatisationPackages", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JenkinsPackages", "JenkinsPackages\JenkinsPackages.csproj", "{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Data.Models.Tests", "LibrarySystem.Data.Models.Tests\LibrarySystem.Data.Models.Tests.csproj", "{81BD5D6B-3316-4915-A6EB-637B30F7A905}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,10 +61,6 @@ Global
 		{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81BD5D6B-3316-4915-A6EB-637B30F7A905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81BD5D6B-3316-4915-A6EB-637B30F7A905}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81BD5D6B-3316-4915-A6EB-637B30F7A905}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81BD5D6B-3316-4915-A6EB-637B30F7A905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +73,5 @@ Global
 		{F3937677-8FAF-426E-9AA3-E9FF78D42A97} = {A9767ED7-9119-4050-801F-BADA043D99E5}
 		{9C81B7AB-EA8B-4F3B-94F2-3C02D969CD33} = {D682A328-BBE2-4F04-B794-F13F18420A6D}
 		{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA} = {D2174134-1BBE-4485-891C-7C060124D87D}
-		{81BD5D6B-3316-4915-A6EB-637B30F7A905} = {D682A328-BBE2-4F04-B794-F13F18420A6D}
 	EndGlobalSection
 EndGlobal
