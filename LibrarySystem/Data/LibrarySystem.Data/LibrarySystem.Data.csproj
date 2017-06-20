@@ -67,7 +67,7 @@
     <Compile Include="LibrarySystemEfDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\LibrarySystemEfDataProvider.cs" />
+    <Compile Include="Repositories\LibrarySystemEfWrapper.cs" />
     <Compile Include="Repositories\LibrarySystemEfDbContextSaveChanges.cs" />
   </ItemGroup>
   <ItemGroup>
