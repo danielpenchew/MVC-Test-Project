@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibrarySystem.Web.Models.Author
+namespace LibrarySystem.Web.Models.AuthorModels
 {
     public class AuthorViewModel
     {

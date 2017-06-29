@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibrarySystem.Web.Models.Book
+namespace LibrarySystem.Web.Models.BookModels
 {
     public class BookDetailViewModel
     {

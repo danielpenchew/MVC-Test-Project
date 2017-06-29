@@ -8,8 +8,7 @@ namespace LibrarySystem.Web.Controllers
 {
     public class BookController : Controller
     {
-        // GET: Book
-        public ActionResult Index()
+        public ActionResult Create()
         {
             return View();
         }

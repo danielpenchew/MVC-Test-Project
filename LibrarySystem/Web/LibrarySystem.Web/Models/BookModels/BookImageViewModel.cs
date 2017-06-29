@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibrarySystem.Web.Models.Book
+namespace LibrarySystem.Web.Models.BookModels
 {
     public class BookImageViewModel
     {

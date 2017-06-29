@@ -1,7 +1,26 @@
-﻿
+﻿@model LibrarySystem.Web.Models.Book.BookCreateViewModel
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+@using (Html.BeginForm("Create", "Book", null, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="jumbotron">
+        <div class="form-group">
+            @Html.LabelFor(b => b.Title, new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.EditorFor(b => b.Title, new { @class="form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(b => b., new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                @Html.EditorFor(b => b.Title, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+}
+
 

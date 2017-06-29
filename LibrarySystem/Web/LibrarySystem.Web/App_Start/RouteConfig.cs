@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.AspNet.FriendlyUrls;
 
 namespace LibrarySystem.Web
 {
@@ -11,6 +12,9 @@ namespace LibrarySystem.Web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            var settings = new FriendlyUrlSettings();
+            settings.AutoRedirectMode = RedirectMode.Permanent;
+            routes.EnableFriendlyUrls(settings);
             routes.LowercaseUrls = true;
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
