@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibrarySystem.Data.Services.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace LibrarySystem.Web.Controllers
 {
     public class BookController : Controller
     {
+        private readonly IBookServices bookServices;
+
         public ActionResult Create()
         {
             return View();

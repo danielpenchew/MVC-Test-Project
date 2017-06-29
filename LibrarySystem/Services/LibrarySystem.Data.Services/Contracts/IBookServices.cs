@@ -1,5 +1,6 @@
 ﻿using LibrarySytem.Data.Models.Models;
 using System;
+using System.Linq;
 
 namespace LibrarySystem.Data.Services.Contracts
 {
@@ -12,6 +13,10 @@ namespace LibrarySystem.Data.Services.Contracts
         void DeleteBookById(object id);
 
         Book GetById(Guid id);
+
+        IQueryable<Book> GetAllBooks();
+
+        void CreateBook(Book book);
 
         void UpdateBook(Book book);
     }

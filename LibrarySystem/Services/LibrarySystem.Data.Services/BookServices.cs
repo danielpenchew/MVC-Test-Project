@@ -3,6 +3,7 @@ using LibrarySystem.Data.Contracts;
 using LibrarySystem.Data.Services.Contracts;
 using LibrarySytem.Data.Models.Models;
 using System;
+using System.Linq;
 
 namespace LibrarySystem.Data.Services
 {
@@ -26,6 +27,19 @@ namespace LibrarySystem.Data.Services
 
             this.bookWrapper.Add(book);
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
+        }
+
+        public void CreateBook(Book book)
+        {
+            Guard.WhenArgument(book, "book").IsNull().Throw();
+
+            this.bookWrapper.Add(book);
+            this.librarySystemEfDbContextSaveChanges.SaveChanges();
+        }
+
+        public IQueryable<Book> GetAllBooks()
+        {
+            return this.bookWrapper.All();
         }
 
         public void DeleteBook(Book book)
