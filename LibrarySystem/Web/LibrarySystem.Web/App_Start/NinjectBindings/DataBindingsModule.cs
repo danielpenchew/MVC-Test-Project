@@ -13,7 +13,7 @@ namespace LibrarySystem.Web.App_Start.NinjectBindings
         public override void Load()
         {
             this.Bind(this.BindClasses);
-            this.Bind<ILibrarySystemEfDbContextSaveChanges>().To<LibrarySystemEfDbContextSaveChanges>().InRequestScope();
+            //this.Bind<ILibrarySystemEfDbContextSaveChanges>().To<LibrarySystemEfDbContextSaveChanges>().InRequestScope();
         }
 
         private void BindClasses(IFromSyntax bindings)

@@ -12,6 +12,7 @@ namespace LibrarySystem.Web.App_Start
     using Ninject.Web.Common;
     using NinjectBindings;
     using Infrastucture.Contracts;
+    using Infrastucture;
 
     public static class NinjectWebCommon 
     {
@@ -65,7 +66,7 @@ namespace LibrarySystem.Web.App_Start
         {
             kernel.Load(new DataBindingsModule());
             kernel.Load(new DataServicesBindingsModule());
-            kernel.Bind<IMappingService>().To<IMappingService>().InRequestScope();
+            kernel.Bind<IMappingService>().To<MappingService>().InRequestScope();
         }        
     }
 }
