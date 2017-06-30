@@ -1,10 +1,6 @@
 ﻿using LibrarySystem.Data;
 using LibrarySystem.Data.Migrations;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace LibrarySystem.Web.App_Start
 {

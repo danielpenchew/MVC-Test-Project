@@ -8,7 +8,7 @@ namespace LibrarySystem.Web.App_Start.NinjectBindings
     {
         public override void Load()
         {
-            this.Bind(BindClasses);
+            this.Bind(this.BindClasses);
         }
 
         private void BindClasses(IFromSyntax bindings)

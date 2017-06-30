@@ -12,6 +12,7 @@ namespace LibrarySytem.Data.Models.Models
         public Author()
         {
             this.books = new HashSet<Book>();
+            this.Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

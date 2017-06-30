@@ -13,6 +13,7 @@ namespace LibrarySytem.Data.Models.Models
         public Book()
         {
             this.images = new HashSet<Image>();
+            this.Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

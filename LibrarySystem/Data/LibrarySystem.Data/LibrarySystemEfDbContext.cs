@@ -6,7 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace LibrarySystem.Data
 {
-    public class LibrarySystemEfDbContext : IdentityDbContext<User>, ILibrarySystemEfDbContext, ILibrarySystemEfDbContextSaveChanges
+    public class LibrarySystemEfDbContext : IdentityDbContext<User>, ILibrarySystemEfDbContext
     {
         public LibrarySystemEfDbContext()
             : base("LibrarySystemDb")

@@ -78,10 +78,5 @@ namespace LibrarySystem.Data.Repositories
 
             entry.State = EntityState.Modified;
         }
-
-        public void Dispose()
-        {
-            this.Context.SaveChanges();
-        }
     }
 }
