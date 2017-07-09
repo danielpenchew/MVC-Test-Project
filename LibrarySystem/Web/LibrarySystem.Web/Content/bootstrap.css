@@ -1780,6 +1780,7 @@ textarea.form-control {
 .checkbox-inline input[type="checkbox"] {
   float: left;
   margin-left: -20px;
+  margin-top: 16px;
 }
 
 .radio + .radio,
