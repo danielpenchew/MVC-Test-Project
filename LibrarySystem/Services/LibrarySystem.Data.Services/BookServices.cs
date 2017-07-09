@@ -29,14 +29,6 @@ namespace LibrarySystem.Data.Services
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
 
-        public void CreateBook(Book book)
-        {
-            Guard.WhenArgument(book, "book").IsNull().Throw();
-
-            this.bookWrapper.Add(book);
-            this.librarySystemEfDbContextSaveChanges.SaveChanges();
-        }
-
         public IQueryable<Book> GetAllBooks()
         {
             return this.bookWrapper.All();

@@ -55,16 +55,16 @@ namespace LibrarySystem.Web.Controllers
                 Author = model.Author,
                 AuthorId = model.Author.Id,
                 Description = model.Description,
-                //UserId = this.User.Identity.GetUserId()
+                UserId = this.User.Identity.GetUserId()
             };
 
             try
             {
                 book.Title = Sanitizer.GetSafeHtmlFragment(model.Title);
                 book.Description = Sanitizer.GetSafeHtmlFragment(model.Description);
-                this.bookServices.CreateBook(book);
+                this.bookServices.AddBook(book);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.TempData["Notification"] = "Exception.";
                 return View(model);

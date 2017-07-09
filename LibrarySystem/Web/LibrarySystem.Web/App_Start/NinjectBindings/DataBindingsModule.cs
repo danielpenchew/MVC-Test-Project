@@ -1,6 +1,4 @@
 ﻿using LibrarySystem.Data;
-using LibrarySystem.Data.Contracts;
-using LibrarySystem.Data.Repositories;
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Conventions.Syntax;
 using Ninject.Modules;
@@ -13,7 +11,6 @@ namespace LibrarySystem.Web.App_Start.NinjectBindings
         public override void Load()
         {
             this.Bind(this.BindClasses);
-            //this.Bind<ILibrarySystemEfDbContextSaveChanges>().To<LibrarySystemEfDbContextSaveChanges>().InRequestScope();
         }
 
         private void BindClasses(IFromSyntax bindings)

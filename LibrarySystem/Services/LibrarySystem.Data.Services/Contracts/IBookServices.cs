@@ -16,8 +16,6 @@ namespace LibrarySystem.Data.Services.Contracts
 
         IQueryable<Book> GetAllBooks();
 
-        void CreateBook(Book book);
-
         void UpdateBook(Book book);
     }
 }

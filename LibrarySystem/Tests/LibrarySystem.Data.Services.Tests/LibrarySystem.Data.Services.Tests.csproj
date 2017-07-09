@@ -59,6 +59,7 @@
     <Compile Include="BookServicesTests\Constructor_Should.cs" />
     <Compile Include="BookServicesTests\DeleteBookById_Should.cs" />
     <Compile Include="BookServicesTests\DeleteBook_Should.cs" />
+    <Compile Include="BookServicesTests\GetAllBooks_Should.cs" />
     <Compile Include="BookServicesTests\GetById_Should.cs" />
     <Compile Include="BookServicesTests\UpdateBook_Should.cs" />
     <Compile Include="ImageServicesTests\Constructor_Should.cs" />
