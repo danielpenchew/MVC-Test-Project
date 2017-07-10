@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IAuthor.cs" />
     <Compile Include="Contracts\IBook.cs" />
-    <Compile Include="Contracts\IPicture.cs" />
+    <Compile Include="Contracts\IImage.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Image.cs" />

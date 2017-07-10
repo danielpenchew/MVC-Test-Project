@@ -8,6 +8,6 @@ namespace LibrarySystem.Data.Services.Contracts
     {
         IQueryable<Image> GetImagesByBookId(Guid bookId);
 
-        Image GetById(Guid id);
+        Image GetById(Guid? id);
     }
 }

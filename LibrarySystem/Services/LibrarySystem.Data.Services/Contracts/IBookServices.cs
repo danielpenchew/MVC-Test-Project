@@ -12,7 +12,7 @@ namespace LibrarySystem.Data.Services.Contracts
 
         void DeleteBookById(object id);
 
-        Book GetById(Guid id);
+        Book GetById(Guid? id);
 
         IQueryable<Book> GetAllBooks();
 

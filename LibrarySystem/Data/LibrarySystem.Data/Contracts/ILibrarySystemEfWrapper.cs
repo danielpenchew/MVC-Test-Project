@@ -9,7 +9,7 @@ namespace LibrarySystem.Data.Contracts
 
         void Add(T entity);
 
-        T GetById(Guid id);
+        T GetById(Guid? id);
 
         void Delete(Guid id);
 

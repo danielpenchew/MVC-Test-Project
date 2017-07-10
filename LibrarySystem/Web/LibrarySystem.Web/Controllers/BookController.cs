@@ -8,6 +8,7 @@ using Microsoft.Security.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -17,11 +18,7 @@ namespace LibrarySystem.Web.Controllers
     {
         private readonly IBookServices bookServices;
         private readonly IMappingService mappingService;
-
-        public BookController()
-        {
-        }
-
+        
         public BookController(IBookServices bookServices, IMappingService mappingService)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
@@ -73,6 +70,16 @@ namespace LibrarySystem.Web.Controllers
             this.TempData["Notification"] = "Succesfully created a book!";
 
             return Redirect("/");
+        }
+
+        [HttpGet]
+        public ActionResult Detail(Guid? id)
+        {
+            var book = this.bookServices.GetById((Guid)id);
+            
+            var bookView = this.mappingService.Map<BookDetailViewModel>(book);
+
+            return View(bookView);
         }
     }
 }

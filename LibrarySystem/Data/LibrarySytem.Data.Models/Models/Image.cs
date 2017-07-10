@@ -11,7 +11,7 @@ namespace LibrarySytem.Data.Models.Models
 
         public virtual Book Book { get; set; }
 
-        public Guid BookId { get; set; }
+        public Guid? BookId { get; set; }
 
         public byte[] ImageData { get; set; }
     }

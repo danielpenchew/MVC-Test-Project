@@ -8,6 +8,6 @@ namespace LibrarySystem.Data.Services.Contracts
     {
         IQueryable<Author> GetAllAuthors();
 
-        Author GetById(Guid id);
+        Author GetById(Guid? id);
     }
 }

@@ -50,7 +50,7 @@ namespace LibrarySystem.Data.Services
             this.librarySystemEfDbContextSaveChanges.SaveChanges();
         }
 
-        public Book GetById(Guid id)
+        public Book GetById(Guid? id)
         {
             return this.bookWrapper.GetById(id);
         }

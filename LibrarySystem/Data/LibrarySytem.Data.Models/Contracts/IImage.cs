@@ -11,7 +11,7 @@ namespace LibrarySytem.Data.Models.Contracts
 
         byte[] ImageData { get; set; }
 
-        Guid BookId { get; set; }
+        Guid? BookId { get; set; }
 
         Book Book { get; set; }
     }

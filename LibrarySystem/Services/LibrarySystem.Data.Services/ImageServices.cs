@@ -18,7 +18,7 @@ namespace LibrarySystem.Data.Services
             this.imageWrapper = imageWrapper;
         }
 
-        public Image GetById(Guid id)
+        public Image GetById(Guid? id)
         {
             var image = this.imageWrapper.GetById(id);
 

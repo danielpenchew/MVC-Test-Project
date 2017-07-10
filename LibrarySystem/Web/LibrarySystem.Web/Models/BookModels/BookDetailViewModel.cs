@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibrarySytem.Data.Models.Models;
+using System;
 using System.Collections.Generic;
 
 namespace LibrarySystem.Web.Models.BookModels

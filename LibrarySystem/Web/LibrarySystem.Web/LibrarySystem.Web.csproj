@@ -300,6 +300,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Views\Book\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -326,7 +327,7 @@
       <Name>LibrarySystem.Web.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\LibrarySystem.Data.Services\LibrarySystem.Data.Services.csproj">
-      <Project>{F3937677-8FAF-426E-9AA3-E9FF78D42A97}</Project>
+      <Project>{f3937677-8faf-426e-9aa3-e9ff78d42a97}</Project>
       <Name>LibrarySystem.Data.Services</Name>
     </ProjectReference>
   </ItemGroup>

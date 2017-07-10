@@ -23,7 +23,7 @@ namespace LibrarySystem.Data.Services
             return this.authorWrapper.All();
         }
 
-        public Author GetById(Guid id)
+        public Author GetById(Guid? id)
         {
             return this.authorWrapper.GetById(id);
         }

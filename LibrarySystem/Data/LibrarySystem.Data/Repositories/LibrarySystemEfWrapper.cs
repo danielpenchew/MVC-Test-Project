@@ -21,7 +21,7 @@ namespace LibrarySystem.Data.Repositories
 
         public IDbSet<T> DbSet { get; set; }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State != EntityState.Detached)
@@ -34,12 +34,12 @@ namespace LibrarySystem.Data.Repositories
             }
         }
 
-        public IQueryable<T> All()
+        public virtual IQueryable<T> All()
         {
             return this.DbSet.AsQueryable();
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State != EntityState.Deleted)
@@ -53,7 +53,7 @@ namespace LibrarySystem.Data.Repositories
             }
         }
 
-        public void Delete(Guid id)
+        public virtual void Delete(Guid id)
         {
             var entity = this.GetById(id);
 
@@ -63,12 +63,12 @@ namespace LibrarySystem.Data.Repositories
             }
         }
 
-        public T GetById(Guid id)
+        public virtual T GetById(Guid? id)
         {
             return this.DbSet.Find(id);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State == EntityState.Detached)
