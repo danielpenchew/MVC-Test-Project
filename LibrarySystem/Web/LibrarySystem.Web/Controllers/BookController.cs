@@ -1,6 +1,5 @@
 ﻿using Bytes2you.Validation;
 using LibrarySystem.Data.Services.Contracts;
-using LibrarySystem.Web.Infrastucture.Contracts;
 using LibrarySystem.Web.Models.BookModels;
 using LibrarySytem.Data.Models.Models;
 using Microsoft.AspNet.Identity;
@@ -17,15 +16,12 @@ namespace LibrarySystem.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookServices bookServices;
-        private readonly IMappingService mappingService;
         
-        public BookController(IBookServices bookServices, IMappingService mappingService)
+        public BookController(IBookServices bookServices)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
-            Guard.WhenArgument(mappingService, "mappingService").IsNull().Throw();
 
             this.bookServices = bookServices;
-            this.mappingService = mappingService;
         }
 
         [HttpGet]
@@ -75,11 +71,11 @@ namespace LibrarySystem.Web.Controllers
         [HttpGet]
         public ActionResult Detail(Guid? id)
         {
-            var book = this.bookServices.GetById((Guid)id);
-            
-            var bookView = this.mappingService.Map<BookDetailViewModel>(book);
+            var book = this.bookServices.GetById(id);
 
-            return View(bookView);
+            var viewModel = new BookDetailViewModel(book);
+
+            return View(viewModel);
         }
     }
 }

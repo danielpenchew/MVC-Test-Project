@@ -1,11 +1,11 @@
 ﻿@model LibrarySystem.Web.Models.BookModels.BookDetailViewModel
-@{
-    ViewBag.Title = "Books";
-}
+<div>
+    <div>
+        <strong>@Html.DisplayFor(m => m.Title)</strong>
+    </div>
 
-<h1>@ViewBag.Title</h1>
-
-
-
-<h2>Detail</h2>
+    <div>
+        by @Html.DisplayFor(m => m.Author.LastName)
+    </div>
+</div>
 

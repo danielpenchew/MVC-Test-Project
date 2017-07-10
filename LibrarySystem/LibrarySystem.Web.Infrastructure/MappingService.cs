@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 
+using AutoMapper;
+
 using LibrarySystem.Web.Infrastucture.Contracts;
 
 namespace LibrarySystem.Web.Infrastucture

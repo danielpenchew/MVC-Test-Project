@@ -322,10 +322,6 @@
       <Project>{27c359c6-0a45-4839-8b35-ecefa073a3cc}</Project>
       <Name>LibrarySytem.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\LibrarySystem.Web.Infrastructure\LibrarySystem.Web.Infrastructure.csproj">
-      <Project>{F23BD143-B4A4-4E34-8282-55517A248A71}</Project>
-      <Name>LibrarySystem.Web.Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Services\LibrarySystem.Data.Services\LibrarySystem.Data.Services.csproj">
       <Project>{f3937677-8faf-426e-9aa3-e9ff78d42a97}</Project>
       <Name>LibrarySystem.Data.Services</Name>

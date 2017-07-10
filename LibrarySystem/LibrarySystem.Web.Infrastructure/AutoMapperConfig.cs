@@ -9,7 +9,7 @@ using AutoMapper;
 using LibrarySystem.Web.Infrastucture.Contracts;
 using LibrarySystem.Web.Infrastructure.Contracts;
 
-namespace CarSystem.Web.Infrastucture
+namespace LibrarySystem.Web.Infrastucture
 {
     public class AutoMapperConfig
     {

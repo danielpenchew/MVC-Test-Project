@@ -8,6 +8,19 @@ namespace LibrarySystem.Web.Models.BookModels
 {
     public class BookCreateViewModel
     {
+        public BookCreateViewModel(Book book)
+        {
+            if (book != null)
+            {
+                this.Id = book.Id;
+                this.Title = book.Title;
+                this.Author = book.Author;
+                this.Description = book.Description;
+            }
+        }
+
+        public Guid Id { get; set; }
+
         public string Title { get; set; }
         
         public Author Author { get; set; }
@@ -16,6 +29,6 @@ namespace LibrarySystem.Web.Models.BookModels
         [AllowHtml]
         public string Description { get; set; }
 
-        public IEnumerable<BookImageViewModel> FilesForUpload { get; set; }
+        //public IEnumerable<BookImageViewModel> FilesForUpload { get; set; }
     }
 }
