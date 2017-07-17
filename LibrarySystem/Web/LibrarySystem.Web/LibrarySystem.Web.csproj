@@ -216,6 +216,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AuthorModels\AuthorViewModel.cs" />
+    <Compile Include="Models\BookModels\AllBooksViewModel.cs" />
     <Compile Include="Models\BookModels\BookCreateViewModel.cs" />
     <Compile Include="Models\BookModels\BookDetailViewModel.cs" />
     <Compile Include="Models\BookModels\BookImageViewModel.cs" />
@@ -301,6 +302,7 @@
     <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="Views\Book\Detail.cshtml" />
+    <Content Include="Views\Book\AllBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

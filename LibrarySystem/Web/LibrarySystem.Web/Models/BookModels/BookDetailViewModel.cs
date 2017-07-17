@@ -5,6 +5,10 @@ namespace LibrarySystem.Web.Models.BookModels
 {
     public class BookDetailViewModel
     {
+        public BookDetailViewModel()
+        {
+        }
+
         public BookDetailViewModel(Book book)
         {
             if (book != null)
@@ -13,6 +17,7 @@ namespace LibrarySystem.Web.Models.BookModels
                 this.Title = book.Title;
                 this.Description = book.Description;
                 this.Author = book.Author;
+                this.User = book.User;
             }
         }
 
@@ -25,5 +30,7 @@ namespace LibrarySystem.Web.Models.BookModels
         public Author Author { get; set; }
 
         public string UserId { get; set; }
+
+        public User User { get; set; }
     }
 }

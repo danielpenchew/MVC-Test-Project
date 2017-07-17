@@ -6,6 +6,11 @@ namespace LibrarySystem.Web.Controllers
     {
         public ActionResult Index()
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("AllBooks", "Book");
+            }
+
             return View();
         }
     }

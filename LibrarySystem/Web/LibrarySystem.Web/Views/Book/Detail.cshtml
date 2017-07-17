@@ -1,11 +1,13 @@
-﻿@model LibrarySystem.Web.Models.BookModels.BookDetailViewModel
+﻿@model BookDetailViewModel
+
 <div>
     <div>
-        <strong>@Html.DisplayFor(m => m.Title)</strong>
+        @Html.DisplayFor(m => m.Title)
     </div>
 
     <div>
-        by @Html.DisplayFor(m => m.Author.LastName)
+        by @Html.DisplayFor(m => m.Author.FirstName) 
+        @Html.DisplayFor(m => m.Author.LastName)
     </div>
 </div>
 

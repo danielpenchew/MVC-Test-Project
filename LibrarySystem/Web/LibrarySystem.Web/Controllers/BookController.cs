@@ -6,9 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Security.Application;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LibrarySystem.Web.Controllers
@@ -16,12 +15,15 @@ namespace LibrarySystem.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookServices bookServices;
+        private readonly User user;
         
-        public BookController(IBookServices bookServices)
+        public BookController(IBookServices bookServices, User user)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
+            Guard.WhenArgument(user, "user").IsNull().Throw();
 
             this.bookServices = bookServices;
+            this.user = user;
         }
 
         [HttpGet]
@@ -76,6 +78,26 @@ namespace LibrarySystem.Web.Controllers
             var viewModel = new BookDetailViewModel(book);
 
             return View(viewModel);
+        }
+
+        public ActionResult AllBooks()
+        {
+            var userId = this.User.Identity.GetUserId();
+            var books = this.bookServices.GetAllBooks().Where(b => b.UserId == userId).ToList();
+            var model = new AllBooksViewModel() { AllBooks = new Collection<BookDetailViewModel>() };
+
+            foreach (var book in books)
+            {
+                var modelBook = new BookDetailViewModel()
+                {
+                    Title = book.Title,
+                    Author = book.Author
+                };
+
+                model.AllBooks.Add(modelBook);
+            }
+
+            return View(model);
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@model AllBooksViewModel
+@{
+    ViewBag.Title = "AllBooks";
+}
+
+@foreach (var book in Model.AllBooks)
+{
+    <div class="panel">
+        <div>
+            <h4>
+                <strong>@book.Title</strong>
+            </h4>
+        </div>
+        <div>
+            <h5>
+                <i>by @book.Author.FirstName @book.Author.LastName</i>
+            </h5>
+        </div>
+    </div>
+}
+
+<button>
+    @Html.ActionLink("Add new book", "Create", "Book")
+</button>
+
