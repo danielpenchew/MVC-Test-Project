@@ -15,15 +15,15 @@ namespace LibrarySystem.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookServices bookServices;
-        private readonly User user;
+        //private readonly User user;
         
-        public BookController(IBookServices bookServices, User user)
+        public BookController(IBookServices bookServices)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
-            Guard.WhenArgument(user, "user").IsNull().Throw();
+            //Guard.WhenArgument(user, "user").IsNull().Throw();
 
             this.bookServices = bookServices;
-            this.user = user;
+            //this.user = user;
         }
 
         [HttpGet]

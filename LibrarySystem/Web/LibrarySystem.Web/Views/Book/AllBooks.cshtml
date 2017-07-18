@@ -7,7 +7,15 @@
 {
     <div class="panel">
         <div>
-            @Html.ActionLink(book.Title, "Detail", "Book")
+             @Html.ActionLink(
+                book.Title,
+                "Detail",
+                "Book",
+                routeValues: new {
+                    id = book.Id
+                },
+                htmlAttributes: null
+)
         </div>
         <div>
             <h5>
