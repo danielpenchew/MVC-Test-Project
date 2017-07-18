@@ -5,9 +5,9 @@ namespace LibrarySystem.Web.Models.BookModels
 {
     public class BookDetailViewModel
     {
-        public BookDetailViewModel()
-        {
-        }
+        //public BookDetailViewModel()
+        //{
+        //}
 
         public BookDetailViewModel(Book book)
         {

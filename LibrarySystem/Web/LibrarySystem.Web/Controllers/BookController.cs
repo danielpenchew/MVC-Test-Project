@@ -74,7 +74,6 @@ namespace LibrarySystem.Web.Controllers
         public ActionResult Detail(Guid? id)
         {
             var book = this.bookServices.GetById(id);
-
             var viewModel = new BookDetailViewModel(book);
 
             return View(viewModel);
@@ -88,8 +87,9 @@ namespace LibrarySystem.Web.Controllers
 
             foreach (var book in books)
             {
-                var modelBook = new BookDetailViewModel()
+                var modelBook = new BookDetailViewModel(book)
                 {
+                    Id = book.Id,
                     Title = book.Title,
                     Author = book.Author
                 };
