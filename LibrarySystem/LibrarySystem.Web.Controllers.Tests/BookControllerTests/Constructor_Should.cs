@@ -13,7 +13,6 @@ namespace LibrarySystem.Web.Controllers.Tests.BookControllerTests
         {
             // Arrange
             IBookServices bookServices = null;
-            //User user = null;
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => new BookController(bookServices));

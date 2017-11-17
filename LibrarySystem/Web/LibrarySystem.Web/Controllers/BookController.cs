@@ -5,7 +5,6 @@ using LibrarySytem.Data.Models.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Security.Application;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web.Mvc;
@@ -15,15 +14,12 @@ namespace LibrarySystem.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookServices bookServices;
-        //private readonly User user;
         
         public BookController(IBookServices bookServices)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
-            //Guard.WhenArgument(user, "user").IsNull().Throw();
 
             this.bookServices = bookServices;
-            //this.user = user;
         }
 
         [HttpGet]
