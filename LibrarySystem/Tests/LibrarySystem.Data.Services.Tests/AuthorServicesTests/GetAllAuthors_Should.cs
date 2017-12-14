@@ -15,7 +15,7 @@ namespace LibrarySystem.Data.Services.Tests.AuthorServicesTests
         {
             // Arrange
             var dbSetMock = new Mock<ILibrarySystemEfWrapper<Author>>();
-            var authorServices = new AuthorServices(dbSetMock.Object);
+            AuthorServices authorServices = new AuthorServices(dbSetMock.Object);
 
             // Act
             IEnumerable<Author> expectedResult = new List<Author>() { new Author(), new Author(), new Author() };

@@ -13,7 +13,7 @@ namespace LibrarySystem.Data.Services.Tests.AuthorServicesTests
         {
             // Arrange
             var dbSetMock = new Mock<ILibrarySystemEfWrapper<Author>>();
-            var authorServices = new AuthorServices(dbSetMock.Object);
+            AuthorServices authorServices = new AuthorServices(dbSetMock.Object);
             var authorWithId = new Mock<Author>();
 
             // Act

@@ -18,7 +18,6 @@ namespace LibrarySystem.Web
             routes.LowercaseUrls = true;
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.LowercaseUrls = true;
 
             routes.MapRoute(
                 name: "Default",

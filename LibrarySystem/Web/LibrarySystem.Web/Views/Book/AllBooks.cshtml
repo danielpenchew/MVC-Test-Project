@@ -7,13 +7,11 @@
 {
     <div class="panel">
         <div>
-             @Html.ActionLink(
+            @Html.ActionLink(
                 book.Title,
                 "Detail",
                 "Book",
-                routeValues: new {
-                    id = book.Id
-                },
+                routeValues: new { id = book.Id },
                 htmlAttributes: null
 )
         </div>
@@ -21,10 +19,17 @@
             <h5>
                 <i>by @book.Author.FirstName @book.Author.LastName</i>
             </h5>
+            <button>
+                @Html.ActionLink("Delete", "Delete", new { id = book.Id })
+            </button>
+
+            <button>
+                @Html.ActionLink("Edit", "Edit", new { id = book.Id })
+            </button>
         </div>
     </div>
-}
 
+}
 <button>
     @Html.ActionLink("Add new book", "Create", "Book")
 </button>

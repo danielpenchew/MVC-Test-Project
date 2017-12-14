@@ -1,0 +1,45 @@
+﻿@model BookEditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Edit", "Book", null, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="jumbotron">
+        <div class="form-group">
+            @Html.LabelForModel("Title", new { @class = "col-lg-3 control-label" })
+            <div class="col-md-4">
+                @Html.EditorFor(
+                        b => b.Title, new
+                        {
+                            htmlattributes = new
+                            {
+                                @class = "container"
+                            }
+                        }
+                    )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelForModel("Description", new { @class = "col-lg-3 control-label" })
+            <div class="col-md-5">
+                @Html.EditorFor(b => b.Description, new
+               {
+                   htmlattributes = new
+                   {
+                       @class = "container"
+                   }
+               })
+            </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </div>
+}
+
+<h2>Edit</h2>

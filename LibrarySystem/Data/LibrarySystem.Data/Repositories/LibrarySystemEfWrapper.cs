@@ -55,7 +55,7 @@ namespace LibrarySystem.Data.Repositories
 
         public virtual void Delete(Guid id)
         {
-            var entity = this.GetById(id);
+            T entity = this.GetById(id);
 
             if (entity != null)
             {

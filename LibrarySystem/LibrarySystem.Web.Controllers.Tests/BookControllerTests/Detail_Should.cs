@@ -19,7 +19,7 @@ namespace LibrarySystem.Web.Controllers.Tests.BookControllerTests
             sut.Detail(Guid.NewGuid());
 
             // Assert
-            bookServiceMock.Verify(b => b.GetById(It.IsAny<Guid?>()), Times.Once);
+            bookServiceMock.Verify(b => b.GetById(It.IsAny<Guid>()), Times.Once);
         }
     }
 }

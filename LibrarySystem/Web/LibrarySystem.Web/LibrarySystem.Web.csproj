@@ -230,7 +230,7 @@
     <Compile Include="Models\BookModels\AllBooksViewModel.cs" />
     <Compile Include="Models\BookModels\BookCreateViewModel.cs" />
     <Compile Include="Models\BookModels\BookDetailViewModel.cs" />
-    <Compile Include="Models\BookModels\BookImageViewModel.cs" />
+    <Compile Include="Models\BookModels\BookEditViewModel.cs" />
     <Compile Include="Models\BookModels\BookSearchViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,7 +256,7 @@
     <Content Include="500.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\book.png" />
+    <Content Include="Content\Images\bookHome.jpg" />
     <Content Include="Content\Images\ErrorPages\400.jpg" />
     <Content Include="Content\Images\ErrorPages\404.jpg" />
     <Content Include="Content\Images\ErrorPages\500.jpg" />
@@ -317,6 +317,7 @@
     <Content Include="Views\Book\AllBooks.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

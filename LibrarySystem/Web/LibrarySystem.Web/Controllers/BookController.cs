@@ -5,6 +5,7 @@ using LibrarySytem.Data.Models.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Security.Application;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web.Mvc;
@@ -14,7 +15,7 @@ namespace LibrarySystem.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookServices bookServices;
-        
+
         public BookController(IBookServices bookServices)
         {
             Guard.WhenArgument(bookServices, "bookServices").IsNull().Throw();
@@ -22,7 +23,6 @@ namespace LibrarySystem.Web.Controllers
             this.bookServices = bookServices;
         }
 
-        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -67,23 +67,58 @@ namespace LibrarySystem.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult Edit(Guid? id)
+        {
+            Book book = this.bookServices.GetById(id);
+            BookEditViewModel viewModel = new BookEditViewModel(book);
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BookEditViewModel viewModel, Guid id)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(viewModel);
+            }
+
+            Book book = this.bookServices.GetById(id);
+            book.Title = viewModel.Title;
+            book.Description = viewModel.Description;
+
+            this.bookServices.UpdateBook(book);
+
+            return Redirect("/");
+        }
+
+        public ActionResult Delete(Guid id)
+        {
+            Book book = this.bookServices.GetById(id);
+            this.bookServices.DeleteBook(book);
+
+            return Redirect("/");
+        }
+
+        [HttpGet]
         public ActionResult Detail(Guid? id)
         {
-            var book = this.bookServices.GetById(id);
-            var viewModel = new BookDetailViewModel(book);
+            Book book = this.bookServices.GetById(id);
+            BookDetailViewModel viewModel = new BookDetailViewModel(book);
 
             return View(viewModel);
         }
 
         public ActionResult AllBooks()
         {
-            var userId = this.User.Identity.GetUserId();
-            var books = this.bookServices.GetAllBooks().Where(b => b.UserId == userId).ToList();
-            var model = new AllBooksViewModel() { AllBooks = new Collection<BookDetailViewModel>() };
+            string userId = this.User.Identity.GetUserId();
+            List<Book> books = this.bookServices.GetAllBooks().Where(b => b.UserId == userId).ToList();
+            AllBooksViewModel model = new AllBooksViewModel() { AllBooks = new Collection<BookDetailViewModel>() };
 
             foreach (var book in books)
             {
-                var modelBook = new BookDetailViewModel(book)
+                BookDetailViewModel modelBook = new BookDetailViewModel(book)
                 {
                     Id = book.Id,
                     Title = book.Title,
