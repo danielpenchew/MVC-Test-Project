@@ -21,5 +21,17 @@ namespace LibrarySystem.Web.Controllers.Tests.BookControllerTests
             // Act & Assert
             sut.WithCallTo(x => x.Delete(id)).ShouldRedirectTo("/");
         }
+
+        [Test]
+        public void Throw_When_Passed_Id_Is_Empty()
+        {
+            // Arrange
+            Mock<IBookServices> bookServicesMock = new Mock<IBookServices>();
+            BookController sut = new BookController(bookServicesMock.Object);
+            Guid invalidId = Guid.Empty;
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => sut.Delete(invalidId));
+        }
     }
 }

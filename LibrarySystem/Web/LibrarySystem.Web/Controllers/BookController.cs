@@ -95,6 +95,11 @@ namespace LibrarySystem.Web.Controllers
 
         public ActionResult Delete(Guid id)
         {
+            if (id == Guid.Empty)
+            {
+                throw new ArgumentNullException("id");
+            }
+
             Book book = this.bookServices.GetById(id);
             this.bookServices.DeleteBook(book);
 
