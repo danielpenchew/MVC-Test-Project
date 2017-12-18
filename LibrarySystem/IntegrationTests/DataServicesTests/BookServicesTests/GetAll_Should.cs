@@ -1,72 +1,40 @@
 ﻿using LibrarySystem.Data;
 using LibrarySystem.Data.Contracts;
-using LibrarySystem.Data.Migrations;
 using LibrarySystem.Data.Repositories;
 using LibrarySystem.Data.Services;
 using LibrarySystem.Data.Services.Contracts;
 using LibrarySytem.Data.Models.Models;
 using NUnit.Framework;
-using System.Data.Entity;
 using System.Linq;
+using System.Transactions;
 
 namespace DataServicesTests.BookServicesTests
 {
     [TestFixture]
     public class GetAll_Should
     {
-        private static Author author = new Author()
-        {
-            FirstName = "AuthorFirst2",
-            LastName = "AuthorLast2"
-        };
-
-        private static User user = new User()
-        {
-            UserName = "Pesho Peshov2"
-        };
-
-        private static Book dbModel = new Book()
-        {
-            Title = "Title 2",
-            Description = "Description 2",
-            Author = author,
-            AuthorId = author.Id,
-            User = user,
-            UserId = user.Id
-        };
-
+        private TransactionScope trans = null;
         private static LibrarySystemEfDbContext dbContext = new LibrarySystemEfDbContext();
+        ILibrarySystemEfWrapper<Book> repository = new LibrarySystemEfWrapper<Book>(dbContext);
+        ILibrarySystemEfDbContextSaveChanges saveChanges = new LibrarySystemEfDbContextSaveChanges(dbContext);
 
-        [SetUp()]
-        public static void Init()
+
+        [SetUp]
+        public void SetUp()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LibrarySystemEfDbContext, Configuration>());
-            LibrarySystemEfDbContext.Create().Database.CreateIfNotExists();
-
-            dbContext.Books.Add(dbModel);
-            dbContext.SaveChanges();
-
-            dbModel = dbContext.Books.Single();
+            trans = new TransactionScope(TransactionScopeOption.Required);
         }
 
         [TearDown]
-        public static void Cleanup()
+        public void TearDown()
         {
-            dbContext.Books.Attach(dbModel);
-            dbContext.Books.Remove(dbModel);
-            dbContext.Authors.Remove(author);
-            dbContext.Users.Remove(user);
-
-            dbContext.SaveChanges();
+            trans.Dispose();
         }
-
+        
         [Test]
         public void GetAll_Should_Return_Proper_Collection()
         {
             // Arrange
-            ILibrarySystemEfWrapper<Book> repository = new LibrarySystemEfWrapper<Book>(dbContext);
-            ILibrarySystemEfDbContextSaveChanges saveChanges = new LibrarySystemEfDbContextSaveChanges(dbContext);
-
             IBookServices bookServices = new BookServices(repository, saveChanges);
 
             // Act
