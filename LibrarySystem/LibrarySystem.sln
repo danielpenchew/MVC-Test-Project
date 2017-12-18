@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Data.Models.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.Web.Controllers.Tests", "LibrarySystem.Web.Controllers.Tests\LibrarySystem.Web.Controllers.Tests.csproj", "{CDBD6DD1-EA44-4DF9-8414-243C573EF27D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{8F463777-0511-4F00-94C3-A8EE10BBB1F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServicesTests", "IntegrationTests\DataServicesTests\DataServicesTests.csproj", "{44931A75-C63D-4743-881A-3011087E68BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{CDBD6DD1-EA44-4DF9-8414-243C573EF27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDBD6DD1-EA44-4DF9-8414-243C573EF27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDBD6DD1-EA44-4DF9-8414-243C573EF27D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44931A75-C63D-4743-881A-3011087E68BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44931A75-C63D-4743-881A-3011087E68BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44931A75-C63D-4743-881A-3011087E68BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44931A75-C63D-4743-881A-3011087E68BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +95,6 @@ Global
 		{DE69E56B-A5DE-4056-B76F-9AC1D3D69DAA} = {D2174134-1BBE-4485-891C-7C060124D87D}
 		{E0D8359A-801A-47A8-B8C4-E4DE44D7E6B6} = {D682A328-BBE2-4F04-B794-F13F18420A6D}
 		{CDBD6DD1-EA44-4DF9-8414-243C573EF27D} = {D682A328-BBE2-4F04-B794-F13F18420A6D}
+		{44931A75-C63D-4743-881A-3011087E68BF} = {8F463777-0511-4F00-94C3-A8EE10BBB1F2}
 	EndGlobalSection
 EndGlobal

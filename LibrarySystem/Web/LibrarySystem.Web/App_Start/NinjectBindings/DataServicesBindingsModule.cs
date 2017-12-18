@@ -1,4 +1,6 @@
-﻿using Ninject.Extensions.Conventions;
+﻿using LibrarySystem.Data.Services;
+using LibrarySystem.Data.Services.Contracts;
+using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Conventions.Syntax;
 using Ninject.Modules;
 
