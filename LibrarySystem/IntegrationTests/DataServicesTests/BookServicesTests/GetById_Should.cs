@@ -28,15 +28,17 @@ namespace DataServicesTests.BookServicesTests
         {
             trans.Dispose();
         }
+
+        // Data setup 
         private static Author author = new Author()
         {
-            FirstName = "yolo",
-            LastName = "yolov"
+            FirstName = "Yolo",
+            LastName = "Yolov"
         };
 
         private static User user = new User()
         {
-            UserName = "user userov"
+            UserName = "User Userov"
         };
 
         private static Book book = new Book()
@@ -53,11 +55,11 @@ namespace DataServicesTests.BookServicesTests
         public void Return_Book_With_Proper_Id()
         {
             // Arrange
-            IBookServices bookServices = new BookServices(repository, saveChanges);
-            bookServices.AddBook(book);
+            IBookServices sut = new BookServices(repository, saveChanges);
+            sut.AddBook(book);
 
             // Act
-            Book result = bookServices.GetById(book.Id);
+            Book result = sut.GetById(book.Id);
 
             // Assert
             Assert.IsNotNull(result);

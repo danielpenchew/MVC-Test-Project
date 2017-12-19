@@ -11,7 +11,7 @@ using System.Transactions;
 namespace DataServicesTests.BookServicesTests
 {
     [TestFixture]
-    public class Add_Should
+    public class DeleteBook_Should
     {
         private TransactionScope trans = null;
         private static LibrarySystemEfDbContext dbContext = new LibrarySystemEfDbContext();
@@ -29,7 +29,7 @@ namespace DataServicesTests.BookServicesTests
         {
             trans.Dispose();
         }
-        
+
         // Data setup 
         private static Author author = new Author()
         {
@@ -53,18 +53,17 @@ namespace DataServicesTests.BookServicesTests
         };
 
         [Test]
-        public void Insert_Proper_Entity_In_Collection()
+        public void Remove_Proper_Book_From_Collection()
         {
             // Arrange
             IBookServices sut = new BookServices(repository, saveChanges);
-
-            // Act
             sut.AddBook(book);
 
-            Book result = sut.GetById(book.Id);
+            // Act
+            sut.DeleteBook(book);
 
-            // Assert
-            Assert.IsNotNull(result);
+            // Arrange
+            Assert.IsEmpty(dbContext.Books);
         }
 
         [Test]
@@ -75,7 +74,7 @@ namespace DataServicesTests.BookServicesTests
             Book nullBook = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => sut.AddBook(nullBook));
+            Assert.Throws<ArgumentNullException>(() => sut.DeleteBook(nullBook));
         }
     }
 }

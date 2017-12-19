@@ -8,16 +8,14 @@ using NUnit.Framework;
 using System.Linq;
 using System.Transactions;
 
-namespace DataServicesTests.BookServicesTests
+namespace DataServicesTests.AuthorServicesTests
 {
     [TestFixture]
     public class GetAll_Should
     {
         private TransactionScope trans = null;
         private static LibrarySystemEfDbContext dbContext = new LibrarySystemEfDbContext();
-        ILibrarySystemEfWrapper<Book> repository = new LibrarySystemEfWrapper<Book>(dbContext);
-        ILibrarySystemEfDbContextSaveChanges saveChanges = new LibrarySystemEfDbContextSaveChanges(dbContext);
-
+        ILibrarySystemEfWrapper<Author> repository = new LibrarySystemEfWrapper<Author>(dbContext);
 
         [SetUp]
         public void SetUp()
@@ -30,18 +28,22 @@ namespace DataServicesTests.BookServicesTests
         {
             trans.Dispose();
         }
-        
-        [Test]
-        public void GetAll_Should_Return_Proper_Collection()
+
+        // Data setup
+        Author author = new Author()
         {
-            // Arrange
-            IBookServices sut = new BookServices(repository, saveChanges);
+            FirstName = "Yolo",
+            LastName = "Yolov"
+        };
 
-            // Act
-            IQueryable<Book> result = sut.GetAllBooks();
-
+        [Test]
+        public void Return_Proper_Collection_Type_When_Called()
+        {
             // Assert
-            Assert.AreEqual(result, dbContext.Books);
+            IAuthorServices sut = new AuthorServices(repository);
+
+            // Act & Assert
+            Assert.IsInstanceOf<IQueryable<Author>>(sut.GetAllAuthors());
         }
     }
 }
